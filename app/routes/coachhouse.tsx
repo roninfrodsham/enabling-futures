@@ -9,7 +9,7 @@ import { Footer } from "./components/Footer"
 
 import coachHouse from "~/assets/the_coach_house.jpg"
 import ofsted from "~/assets/ofsted_outstanding.png"
-import coachHouseVideo from "~/assets/coach_house.mp4"
+//import coachHouseVideo from "~/assets/coach_house.mp4"
 
 export const meta: MetaFunction = () => ({
   title: "The Coach House - 6 Bedroom Ofsted Outstanding Residential Child Care",
@@ -120,7 +120,7 @@ export default function Index() {
                   </div>
                   <div className="mt-2">
                     <video controls width="100%">
-                      <source src={coachHouseVideo} type="video/mp4" />
+                      <source src="" type="video/mp4" />
                     </video>
                   </div>
                 </Dialog.Panel>

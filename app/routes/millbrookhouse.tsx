@@ -8,7 +8,7 @@ import { Button } from "./components/Button"
 import { Footer } from "./components/Footer"
 
 import millbrookHouse from '~/assets/millbrook_house.jpg'
-import coachHouseVideo from '~/assets/coach_house.mp4'
+//import coachHouseVideo from '~/assets/coach_house.mp4'
 
 export const meta: MetaFunction = () => ({
   title: "Millbrook House - 8-bed residential home for children and young people",
@@ -120,7 +120,7 @@ export default function Index() {
                   </div>
                   <div className="mt-2">
                     <video controls width="100%">
-                      <source src={coachHouseVideo} type="video/mp4" />
+                      <source src="" type="video/mp4" />
                     </video>
                   </div>
                 </Dialog.Panel>
