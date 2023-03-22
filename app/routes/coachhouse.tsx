@@ -9,7 +9,6 @@ import { Footer } from "./components/Footer"
 
 import coachHouse from "~/assets/the_coach_house.jpg"
 import ofsted from "~/assets/ofsted_outstanding.png"
-//import coachHouseVideo from "~/assets/coach_house.mp4"
 
 export const meta: MetaFunction = () => ({
   title: "The Coach House - 6 Bedroom Ofsted Outstanding Residential Child Care",

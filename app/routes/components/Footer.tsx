@@ -12,9 +12,9 @@ export function Footer() {
         <img src={logo} className="mx-auto h-10 w-auto" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
-              <NavLink href="#coachhouse">The Coach House</NavLink>
-              <NavLink href="#coachhouse">Millbrook House</NavLink>
-              <NavLink href="#coachhouse">Bespoke Services</NavLink>
+              <NavLink href="/coachhouse">The Coach House</NavLink>
+              <NavLink href="/millbrookhouse">Millbrook House</NavLink>
+              <NavLink href="/bespokeservices">Bespoke Services</NavLink>
             </div>
           </nav>
         </div>

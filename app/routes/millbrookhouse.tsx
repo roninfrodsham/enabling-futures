@@ -8,7 +8,6 @@ import { Button } from "./components/Button"
 import { Footer } from "./components/Footer"
 
 import millbrookHouse from '~/assets/millbrook_house.jpg'
-//import coachHouseVideo from '~/assets/coach_house.mp4'
 
 export const meta: MetaFunction = () => ({
   title: "Millbrook House - 8-bed residential home for children and young people",
