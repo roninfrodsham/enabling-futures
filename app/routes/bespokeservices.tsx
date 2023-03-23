@@ -6,7 +6,7 @@ import Header from "./components/Header"
 import { Container } from "./components/Container"
 import { Footer } from "./components/Footer"
 
-import millbrookHouse from '~/assets/millbrook_house.jpg'
+import bespokeServices from '~/assets/bespoke_services.jpg'
 
 export const meta: MetaFunction = () => ({
   title: "Bespoke services - Millbrook Apartment and Riverbank are clinically led and offer bespoke and holistic packages of care for children/young people",
@@ -45,7 +45,7 @@ export default function Index() {
                   </p>
                 </div>
               </div>
-              <img src={millbrookHouse} className="rounded-xl" />
+              <img src={bespokeServices} className="rounded-xl" />
             </div>
           </div>
           <div className="mt-20 md:mt-32 md:block">

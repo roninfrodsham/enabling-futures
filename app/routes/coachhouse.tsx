@@ -119,7 +119,7 @@ export default function Index() {
                   </div>
                   <div className="mt-2">
                     <video controls width="100%">
-                      <source src="" type="video/mp4" />
+                      <source src="https://enablingfutureltd.s3.amazonaws.com/coach_house_final_360p.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </Dialog.Panel>
