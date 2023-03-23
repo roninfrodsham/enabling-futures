@@ -1,14 +1,27 @@
+import { useState, Fragment } from "react"
+import { Dialog, Transition } from "@headlessui/react"
+
 import { Container } from "./Container"
 import { Button } from "./Button"
 
-import mcc from "~/assets/mcc.svg"
-import smbc from "~/assets/smbc.png"
-import tc from "~/assets/tc.png"
-import cec from "~/assets/cec.png"
-import tcc from "~/assets/tcc.png"
-import dcc from "~/assets/dcc.png"
+// import mcc from "~/assets/mcc.svg"
+// import smbc from "~/assets/smbc.png"
+// import tc from "~/assets/tc.png"
+// import cec from "~/assets/cec.png"
+// import tcc from "~/assets/tcc.png"
+// import dcc from "~/assets/dcc.png"
 
 export default function Hero() {
+  let [isOpen, setIsOpen] = useState(false)
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
+
   return (
     <Container className="pt-10 pb-16 text-center">
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
@@ -27,20 +40,20 @@ export default function Hero() {
         in residential care for children, young people and adults
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        The ethos of our service is to provide a warm, consistent and nurturing approach that will allow children and young people to grow and learn and express their feelings in a safe and stable environment.
+        The ethos of our service is to provide a warm, consistent and nurturing approach, that will allow children and young people to grow, learn and express their feelings in a safe and stable environment.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button variant="outline">
+        <Button variant="solid" color="blue" onClick={openModal}>
           <svg
             aria-hidden="true"
-            className="h-3 w-3 flex-none fill-blue-400 group-active:fill-current"
+            className="h-3 w-3 flex-none fill-blue-400 group-active:fill-current fill-yellow-400"
           >
             <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z" />
           </svg>
           <span className="ml-3">Aerial Video</span>
         </Button>
       </div>
-      <div className="mt-20">
+      {/* <div className="mt-20">
         <p className="font-display text-base text-slate-900">
           Trusted by the following councils
         </p>
@@ -74,7 +87,52 @@ export default function Hero() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-100" onClose={closeModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="transform overflow-hidden rounded-2xl bg-white p-6 sm:p-10 text-left align-middle shadow-xl transition-all">
+                  <div className="absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
+                    <button type="button" onClick={closeModal} className="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none">
+                      <span className="sr-only">Close</span>
+                      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div className="mt-2">
+                    <video controls width="100%">
+                      <source src="https://enablingfutureltd.s3.amazonaws.com/ariel_video.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </Container>
   )
 }

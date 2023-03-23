@@ -37,20 +37,20 @@ export default function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8">
               <div className="flex items-center">
                 <div>
-                  <h2 className="font-display text-4xl tracking-tight text-sky-600 sm:text-4xl">
+                  <h1 className="font-display text-4xl tracking-tight text-sky-600 sm:text-4xl">
                     Millbrook House
-                  </h2>
+                  </h1>
                   <p className="mt-4 mb-6 text-lg tracking-tight text-slate-700">
-                    8-bed residential home for children and young people set in approximately 10 acres of land.
+                    Our 8-bed residential home for young people and adults set in approximately 10 acres of land.
                   </p>
-                  <Button variant="outline">
+                  <Button variant="solid" color="blue" onClick={openModal}>
                     <svg
                       aria-hidden="true"
-                      className="h-3 w-3 flex-none fill-blue-400 group-active:fill-current"
+                      className="h-3 w-3 flex-none fill-blue-400 group-active:fill-current fill-yellow-400"
                     >
                       <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z" />
                     </svg>
-                    <span className="ml-3" onClick={openModal}>Flythrough Video</span>
+                    <span className="ml-3">Flythrough Video</span>
                   </Button>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function Index() {
                 <p className="mb-2 text-sm"><span className="font-display tracking-tight text-sky-600">Equality</span> - ensuring that the services and facilities of the home are accessible and available to all. The people will not be judged with regards to their circumstances, backgrounds and lifestyles, similarly they will not be discriminated against on the grounds of race, culture, language, religious beliefs, gender, sexuality or disability.</p>
                 <p className="mb-2 text-sm"><span className="font-display tracking-tight text-sky-600">Quality</span> - promoting a high quality service which is based on legal requirements and government legislation, ensuring that high standards and good practice is maintained.</p>
                 <p className="mb-2 text-sm"><span className="font-display tracking-tight text-sky-600">Independence</span> - show commitment to provide opportunities for the people to think and act independently whilst ensuring their safety, to allow the Individuals to take measured risks, that will enable them to learn, progress and develop.</p>
-                <p className="mb-2 text-sm"><span className="font-display tracking-tight text-sky-600">Rights</span> - ensuring the people's rights and entitlements are respected as set out in the United Nations Convention of the Human Rights Act. Acknowledging that with rights comes responsibilities. The Company recognises that each individual should be supported to make informed choices regarding their life, welfare and care. Acknowledging the governmental guidance in accordance with Mental Capacity Act 2005 (amended 2011).</p>
+                <p className="mb-2 text-sm"><span className="font-display tracking-tight text-sky-600">Rights</span> - ensuring the people's rights and entitlements are respected as set out in the Human Rights Act. Acknowledging that with rights comes responsibilities. The Company recognises that each individual should be supported to make informed choices regarding their life, welfare and care. Acknowledging the governmental guidance in accordance with Mental Capacity Act 2005 (amended 2011).</p>
                 <p className="mb-2 text-sm"><span className="font-display tracking-tight text-sky-600">Development and fulfilment</span> - recognition that people with disabilities are people first, and that they should not be disadvantaged because of their disability.</p>
               </div>
             </div>

@@ -34,7 +34,7 @@ export function Button({
   className,
   href,
   ...props
-}: { variant?: string, color?: string, href?: string, className?: string, children: React.ReactNode }) {
+}: { variant?: string, color?: string, href?: string, className?: string, children: React.ReactNode, onClick?: ()=> void }) {
   className = clsx(
     baseStyles[variant],
     variantStyles[variant][color],

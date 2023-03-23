@@ -18,10 +18,16 @@ export function Footer() {
             </div>
           </nav>
         </div>
+        <div className="text-center text-sm text-slate-500 mb-6">
+          <p>Enabling Futures Ltd, Millbrook House Estate, Manchester Road, Hollingworth, Hyde, Cheshire, SK14 8LA</p>
+          <p><span className="block md:inline md:mr-2">Administration: <a href="mailto:admin@enablingfutures.org.uk" className="text-slate-900">admin@enablingfutures.org.uk</a></span><span>Recruitment: <a href="mailto:recruitment@enablingfutures.org.uk" className="text-slate-900">recruitment@enablingfutures.org.uk</a></span></p>
+          <p><span className="block md:inline md:mr-2">The Coach House: <a href="tel:01457 764518" className="text-slate-900">01457 764518</a></span><span>Millbrook House: <a href="tel:01457 766910" className="text-slate-900">01457 766910</a></span></p>
+          <p><span className="block md:inline md:mr-2">Recruitment/Business Management: <a href="tel:01457 243141" className="text-slate-900">01457 243141</a></span><span>Referrals: <a href="tel:07889 920312" className="text-slate-900">07889 920312</a></span></p>
+        </div>
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/EnablingFuturesLtd"
               className="group"
               aria-label="Enabling Futures on Facebook"
             >

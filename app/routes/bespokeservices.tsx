@@ -1,6 +1,5 @@
 import { useState, Fragment } from "react"
 import type { MetaFunction } from "@remix-run/cloudflare"
-import { Dialog, Transition } from '@headlessui/react'
 
 import Header from "./components/Header"
 import { Container } from "./components/Container"
@@ -13,16 +12,6 @@ export const meta: MetaFunction = () => ({
 })
 
 export default function Index() {
-  let [isOpen, setIsOpen] = useState(false)
-
-  function closeModal() {
-    setIsOpen(false)
-  }
-
-  function openModal() {
-    setIsOpen(true)
-  }
-
   return (
     <>
       <Header />
@@ -37,11 +26,11 @@ export default function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8">
               <div className="flex items-center">
                 <div>
-                  <h2 className="font-display text-4xl tracking-tight text-sky-600 sm:text-4xl">
+                  <h1 className="font-display text-4xl tracking-tight text-sky-600 sm:text-4xl">
                     Bespoke Services
-                  </h2>
+                  </h1>
                   <p className="mt-4 mb-4 text-lg tracking-tight text-slate-700">
-                    Clinically led, bespoke and holistic packages of care for children/young people with learning disabilities and/or autism, behaviours of concern or mental health conditions.
+                    Our clinically led, bespoke and holistic packages of care for children, young people and adults with learning disabilities and/or autism, behaviours of concern or mental health conditions.
                   </p>
                 </div>
               </div>
@@ -57,8 +46,8 @@ export default function Index() {
               </div>
               <div className="pr-1  mb-4">
                 <h3 className="mb-3 font-display text-2xl tracking-tight text-sky-600">Riverbank</h3>
-                <p className="mb-2 text-sm">Riverbank is a dual occupancy created within Millbrook House, which is a very large, listed building situated in its own grounds, known as Millbrook Estate. The location is rural/green belt, approximately 1 mile from Tintwistle village which is located in the High Peak District. Riverbank is a one-storey building having all rooms conveniently located on the same level.</p>
-                <p className="text-sm">Riverbank is the lower ground floor of Millbrook House and is a self-contained, separate dwelling. The lower ground floor incorporates one lounge, which is very spacious and comfortably furnished, a bespoke kitchen area and two bespoke bedrooms with en-suite wet room facilities, designed to meet the requirements of individuals who have sensory needs.  Each bedroom has a single diamond shaped window, which can be easily designed to keep out natural light and mood lighting may be installed to give individuals natural arousal with sound proofing to reduce distractions and disturbed sleep. The main bathroom is a spacious wet room, and consists of a bath, WC, sink and shower. The layout has been designed to accommodate sensory bathing and water play opportunities.</p>
+                <p className="mb-2 text-sm">Riverbank is a dual occupancy provision created in the lower ground floor of Millbrook House and is a self-contained, separate dwelling having all rooms conveniently located on the same level. The lower ground floor incorporates one lounge, which is very spacious and comfortably furnished, a bespoke kitchen area and two bespoke bedrooms with en-suite wet room facilities, designed to meet the requirements of individuals who have sensory needs.</p>
+                <p className="text-sm">Each bedroom has a single diamond shaped window, which can be easily designed to keep out natural light and mood lighting may be installed to give individuals natural arousal with sound proofing to reduce distractions and disturbed sleep. The main bathroom is a spacious wet room, and consists of a bath, WC, sink and shower. The layout has been designed to accommodate sensory bathing and water play opportunities.</p>
               </div>
             </div>
           </div>
