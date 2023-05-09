@@ -91,7 +91,7 @@ export default function Index() {
                 <ul role="list" className="order-last mt-10 flex flex-col gap-y-3 text-sm">
                     <li className="flex">
                       <CheckIcon className="text-slate-400" />
-                      <span className="ml-4">£10.00 to £10.40 ph</span>
+                      <span className="ml-4">£10.80 to £11.20 ph</span>
                     </li>
                     <li className="flex">
                       <CheckIcon className="text-slate-400" />
@@ -138,7 +138,7 @@ export default function Index() {
                 <ul role="list" className="order-last mt-10 flex flex-col gap-y-3 text-sm">
                     <li className="flex">
                       <CheckIcon className="text-slate-400" />
-                      <span className="ml-4">£10.00 to £10.40 ph</span>
+                      <span className="ml-4">£10.80 to £11.20 ph</span>
                     </li>
                     <li className="flex">
                       <CheckIcon className="text-slate-400" />
@@ -173,11 +173,11 @@ export default function Index() {
                 <ul role="list" className="order-last mt-10 flex flex-col gap-y-3 text-sm">
                     <li className="flex">
                       <CheckIcon className="text-slate-400" />
-                      <span className="ml-4">Mon - Fri: 08:00-21:30 - £11.80 ph</span>
+                      <span className="ml-4">Mon - Fri: 08:00-21:30 - £12.20 ph</span>
                     </li>
                     <li className="flex">
                       <CheckIcon className="text-slate-400" />
-                      <span className="ml-4">Sat - Sun: 08:00-21:30 - £13.80 ph</span>
+                      <span className="ml-4">Sat - Sun: 08:00-21:30 - £14.20 ph</span>
                     </li>
                     <li className="flex">
                       <CheckIcon className="text-slate-400" />
