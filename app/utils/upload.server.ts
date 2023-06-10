@@ -11,7 +11,7 @@ const extensions = ["docx", "doc", "pdf"]
 
 export const handleUpload = async (request: Request, context: AppLoadContext) => {
   const encoded = btoa(`${context.MAILJET_API_KEY}:${context.MAILJET_SECRET_KEY}`)
-
+  console.log(encoded);
   const formData = await unstable_parseMultipartFormData(request, unstable_createMemoryUploadHandler({
     maxPartSize: 1_000_000
   }))
