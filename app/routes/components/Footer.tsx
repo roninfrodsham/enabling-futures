@@ -1,10 +1,10 @@
 import { Link } from "@remix-run/react"
 
-import { Container } from './Container'
+import Container from './Container'
 import logo from "~/assets/efl_logo_padded.png";
 import { NavLink } from './NavLink'
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-slate-50">
       <Container>

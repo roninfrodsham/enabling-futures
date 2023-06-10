@@ -1,17 +1,24 @@
-import { useState, Fragment } from "react"
-import type { MetaFunction } from "@remix-run/cloudflare"
+import { useActionData } from "@remix-run/react"
+import type { MetaFunction, ActionFunction, ActionArgs } from "@remix-run/cloudflare"
 import clsx from 'clsx'
+import { handleUpload } from "~/utils/upload.server"
 
 import Header from "./components/Header"
-import { Container } from "./components/Container"
-import { Button } from "./components/Button"
-import { Footer } from "./components/Footer"
+import Container from "./components/Container"
+import UploadForm from "./components/UploadForm"
+import Footer from "./components/Footer"
 
 export const meta: MetaFunction = () => ({
   title: "The Coach House - 6 Bedroom Ofsted Outstanding Residential Child Care",
 })
 
-export default function Index() {
+export const action: ActionFunction = async ({ request, context }: ActionArgs) => {
+  return handleUpload(request, context)
+}
+
+export default function WorkWithUs() {
+  const actionData = useActionData()
+
   function SwirlyDoodle({ className }: { className: string }) {
     return (
       <svg
@@ -201,6 +208,7 @@ export default function Index() {
           </div>
         </Container>
         </section>
+        <UploadForm />
       </main>
       <Footer />
     </>

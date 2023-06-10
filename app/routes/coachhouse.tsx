@@ -1,11 +1,14 @@
 import { useState, Fragment } from "react"
-import type { MetaFunction, LoaderArgs } from "@remix-run/cloudflare"
+import { useActionData } from "@remix-run/react"
+import type { MetaFunction, ActionFunction, ActionArgs } from "@remix-run/cloudflare"
 import { Dialog, Transition } from "@headlessui/react"
+import { handleUpload } from "~/utils/upload.server";
 
 import Header from "./components/Header"
-import { Container } from "./components/Container"
-import { Button } from "./components/Button"
-import { Footer } from "./components/Footer"
+import Container from "./components/Container"
+import Button from "./components/Button"
+import UploadForm from "./components/UploadForm"
+import Footer from "./components/Footer"
 
 import coachHouse from "~/assets/the_coach_house.jpg"
 import ofsted from "~/assets/ofsted_outstanding.png"
@@ -14,7 +17,12 @@ export const meta: MetaFunction = () => ({
   title: "The Coach House - 6 Bedroom Ofsted Outstanding Residential Child Care",
 })
 
-export default function Index() {
+export const action: ActionFunction = async ({ request, context }: ActionArgs) => {
+  return handleUpload(request, context)
+}
+
+export default function CoachHouse() {
+  const actionData = useActionData()
   let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
@@ -82,6 +90,7 @@ export default function Index() {
         </Container>
         </section>
       </main>
+      <UploadForm />
       <Footer />
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-100" onClose={closeModal}>

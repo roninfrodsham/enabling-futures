@@ -28,7 +28,7 @@ const variantStyles: { [key: string]: StyleProps } = {
   },
 }
 
-export function Button({
+export default function Button({
   variant = 'solid',
   color = 'slate',
   className,

@@ -3,9 +3,9 @@ import { Link } from "@remix-run/react"
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { Container } from "./Container"
+import Container from "./Container"
 import { NavLink } from "./NavLink"
-import { Button } from "./Button"
+import Button from "./Button"
 
 import logo from "~/assets/efl_logo_padded.png";
 

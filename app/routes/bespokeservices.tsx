@@ -1,9 +1,11 @@
-import { useState, Fragment } from "react"
-import type { MetaFunction } from "@remix-run/cloudflare"
+import { useActionData } from "@remix-run/react"
+import type { MetaFunction, ActionFunction, ActionArgs } from "@remix-run/cloudflare"
+import { handleUpload } from "~/utils/upload.server";
 
 import Header from "./components/Header"
-import { Container } from "./components/Container"
-import { Footer } from "./components/Footer"
+import Container from "./components/Container"
+import UploadForm from "./components/UploadForm"
+import Footer from "./components/Footer"
 
 import bespokeServices from '~/assets/bespoke_services.jpg'
 
@@ -11,7 +13,13 @@ export const meta: MetaFunction = () => ({
   title: "Bespoke services - Millbrook Apartment and Riverbank are clinically led and offer bespoke and holistic packages of care for children/young people",
 })
 
-export default function Index() {
+export const action: ActionFunction = async ({ request, context }: ActionArgs) => {
+  return handleUpload(request, context)
+}
+
+export default function BespokeServices() {
+  const actionData = useActionData()
+
   return (
     <>
       <Header />
@@ -53,6 +61,7 @@ export default function Index() {
           </div>
         </Container>
         </section>
+        <UploadForm />
       </main>
       <Footer />
 

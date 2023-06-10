@@ -1,8 +1,8 @@
 import { useState, Fragment } from "react"
 import { Dialog, Transition } from "@headlessui/react"
 
-import { Container } from "./Container"
-import { Button } from "./Button"
+import Container from "./Container"
+import Button from "./Button"
 
 // import mcc from "~/assets/mcc.svg"
 // import smbc from "~/assets/smbc.png"
