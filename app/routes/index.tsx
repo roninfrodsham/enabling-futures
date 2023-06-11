@@ -1,5 +1,5 @@
-import { useActionData, useLoaderData } from "@remix-run/react"
-import type { MetaFunction, ActionFunction, ActionArgs, LoaderArgs } from "@remix-run/cloudflare"
+import { useActionData } from "@remix-run/react"
+import type { MetaFunction, ActionFunction, ActionArgs } from "@remix-run/cloudflare"
 import { handleUpload } from "~/utils/upload.server";
 
 import Header from "./components/Header"
@@ -17,8 +17,6 @@ export const action: ActionFunction = async ({ request, context }: ActionArgs) =
 
 export default function Index() {
   const actionData = useActionData()
-  console.log("ACTIONDATA", actionData);
-  const loaderData = useLoaderData()
 
   return (
     <>
