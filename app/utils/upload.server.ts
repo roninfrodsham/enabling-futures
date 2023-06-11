@@ -41,14 +41,14 @@ export const handleUpload = async (request: Request, context: AppLoadContext) =>
 	}
   const base64Encoded = btoa(binary)
 
-  return base64Encoded
-
   const mimeIndex = mimeTypes.findIndex(element => element === file.type)
   const mimeType = mimeTypes[mimeIndex]
   const extension = extensions[mimeIndex]
 
   const date = new Date()
   const filename = `cv_upload_${date.getDate()}_${date.getMonth()}_${date.getFullYear()}_${date.getHours()}_${date.getMinutes()}.${extension}`
+
+  return filename
 
   fetch("https://api.mailjet.com/v3/send", {
     method : 'POST',
