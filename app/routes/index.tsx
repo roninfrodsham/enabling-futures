@@ -17,6 +17,7 @@ export const action: ActionFunction = async ({ request, context }: ActionArgs) =
 
 export default function Index() {
   const actionData = useActionData()
+  console.log("ACTIONDATA", actionData);
   const loaderData = useLoaderData()
 
   return (
