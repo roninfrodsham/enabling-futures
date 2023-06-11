@@ -7,6 +7,13 @@ import Button from "./Button"
 import backgroundImage from '~/assets/background-cv.jpg'
 
 export default function UploadForm() {
+  if (typeof window !== 'undefined') {
+    const storage = localStorage.getItem("test")
+    if(storage == undefined) {
+      return null
+    }
+  }
+  
   const actionData = useActionData()
   const [allowPost, setAllowPost] = useState(true)
   const [errorMessage, setErrorMessage] = useState("")
