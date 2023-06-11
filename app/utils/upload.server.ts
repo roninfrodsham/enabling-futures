@@ -48,49 +48,88 @@ export const handleUpload = async (request: Request, context: AppLoadContext) =>
   const date = new Date()
   const filename = `cv_upload_${date.getDate()}_${date.getMonth()}_${date.getFullYear()}_${date.getHours()}_${date.getMinutes()}.${extension}`
 
-  return filename
-
-  fetch("https://api.mailjet.com/v3/send", {
-    method : 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Basic ${encoded}`
-    },
-    body: JSON.stringify({
+  try {
+    let response = fetch("https://api.mailjet.com/v3/send", {
+      method : 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Basic ${encoded}`
+      },
+      body: JSON.stringify({
         "Messages": [
-            {
-                "FromEmail": "enablingfutures@roninjs.co.uk",
-                "FromName": "Enabling Futures Website",
-                "Subject": "CV from website",
-                "Sender": true,
-                "Recipients": [
-                    {
-                        "Email": "roninfrodsham@gmail.com",
-                        "Name": "Jonny Frodsham",
-                        "Vars": "array"
-                    }
-                ],
-                "Attachments": [
-                    {
-                        "Filename": filename,
-                        "Content-type": mimeType,
-                        "Content": base64Encoded
-                    }
-                ],
-            }
+          {
+            "FromEmail": "enablingfutures@roninjs.co.uk",
+            "FromName": "Enabling Futures Website",
+            "Subject": "CV from website",
+            "Sender": true,
+            "Recipients": [
+              {
+                "Email": "roninfrodsham@gmail.com",
+                "Name": "Jonny Frodsham",
+                "Vars": "array"
+              }
+            ],
+            "Attachments": [
+              {
+                "Filename": filename,
+                "Content-type": mimeType,
+                "Content": base64Encoded
+              }
+            ],
+          }
         ]
+      })
     })
-  })
-  .then( resp => resp.json())
-  .then(data => {
-    console.log('Mailjet Response', data)
-  })
-  .catch(err => {
-    console.log("MAIL SEND ERROR", err)
-  })
 
-  return {
-    success: 'Thank you for uploading your CV. We will be in touch.'
+    return response
+
+  } catch(error) {
+    return {
+      error: true,
+      errorMessage: error
+    }
   }
+  // fetch("https://api.mailjet.com/v3/send", {
+  //   method : 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     Authorization: `Basic ${encoded}`
+  //   },
+  //   body: JSON.stringify({
+  //       "Messages": [
+  //           {
+  //               "FromEmail": "enablingfutures@roninjs.co.uk",
+  //               "FromName": "Enabling Futures Website",
+  //               "Subject": "CV from website",
+  //               "Sender": true,
+  //               "Recipients": [
+  //                   {
+  //                       "Email": "roninfrodsham@gmail.com",
+  //                       "Name": "Jonny Frodsham",
+  //                       "Vars": "array"
+  //                   }
+  //               ],
+  //               "Attachments": [
+  //                   {
+  //                       "Filename": filename,
+  //                       "Content-type": mimeType,
+  //                       "Content": base64Encoded
+  //                   }
+  //               ],
+  //           }
+  //       ]
+  //   })
+  // })
+  // .then( resp => resp.json())
+  // .then(data => {
+  //   console.log('Mailjet Response', data)
+  // })
+  // .catch(err => {
+  //   console.log("MAIL SEND ERROR", err)
+  // })
+
+  // return {
+  //   success: 'Thank you for uploading your CV. We will be in touch.'
+  // }
 
 }
