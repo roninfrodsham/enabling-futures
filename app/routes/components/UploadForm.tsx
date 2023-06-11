@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Form, useActionData } from "@remix-run/react"
 
 import Container from "./Container"
@@ -7,18 +7,15 @@ import Button from "./Button"
 import backgroundImage from '~/assets/background-cv.jpg'
 
 export default function UploadForm() {
-  // let showForm = false;
-  // if (typeof window !== 'undefined') {
-  //   const storage = localStorage.getItem("test")
-  //   if(storage !== undefined) {
-  //     showForm = true;
-  //   }
-  // }
-  
   const actionData = useActionData()
   const [showForm, setShowForm] = useState(false)
   const [allowPost, setAllowPost] = useState(true)
   const [errorMessage, setErrorMessage] = useState("")
+
+  useEffect(() => {
+    const storage = localStorage.getItem("test")
+    if(storage) setShowForm(true);
+  }, [])
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if(event !== null) {
@@ -42,7 +39,8 @@ export default function UploadForm() {
   }
 
   return (
-    (showForm &&
+    <>
+    {showForm &&
       <section className="relative overflow-hidden bg-blue-600 py-32">
         <img
           className="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2"
@@ -86,6 +84,7 @@ export default function UploadForm() {
           </div>
         </Container>
       </section>
-    )
+    }
+    </>
   )
 }
