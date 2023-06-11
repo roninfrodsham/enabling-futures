@@ -18,8 +18,6 @@ export const handleUpload = async (request: Request, context: AppLoadContext) =>
 
   const file: any = formData.get("cv")
 
-  return file.type
-
   if(!mimeTypes.includes(file.type)) {
     return {
       error: true,
@@ -42,6 +40,8 @@ export const handleUpload = async (request: Request, context: AppLoadContext) =>
 		binary += String.fromCharCode( bytes[ i ] )
 	}
   const base64Encoded = btoa(binary)
+
+  return base64Encoded
 
   const mimeIndex = mimeTypes.findIndex(element => element === file.type)
   const mimeType = mimeTypes[mimeIndex]
