@@ -67,6 +67,11 @@ export const handleUpload = async (request: Request, context: AppLoadContext) =>
                 "Email": "roninfrodsham@gmail.com",
                 "Name": "Jonny Frodsham",
                 "Vars": "array"
+              },
+              {
+                "Email": "recruitment@enablingfutures.org.uk",
+                "Name": "Jonny Frodsham",
+                "Vars": "array"
               }
             ],
             "Attachments": [
