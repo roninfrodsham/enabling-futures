@@ -62,12 +62,8 @@ export const handleUpload = async (request: Request, context: AppLoadContext) =>
             "FromName": "Enabling Futures Website",
             "Subject": "CV from website",
             "Sender": true,
+            "Text-Part": "A CV has been submitted via the website. Please do not reply to this email.",
             "Recipients": [
-              {
-                "Email": "roninfrodsham@gmail.com",
-                "Name": "Jonny Frodsham",
-                "Vars": "array"
-              },
               {
                 "Email": "recruitment@enablingfutures.org.uk",
                 "Name": "Jonny Frodsham",
